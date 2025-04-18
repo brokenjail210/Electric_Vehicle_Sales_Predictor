@@ -35,7 +35,7 @@ This dynamic **web application** predicts electric vehicle (EV) sales trends usi
 
 2. Prediction Page :
 
-[App Screenshot](static/ui_screenshot.png)
+![App Screenshot](static/ui_screenshot.png)
 
 ## 🎯 Prediction Output Screenshot
 
