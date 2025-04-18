@@ -18,10 +18,6 @@ Thumbs.db
 # Environment variables
 .env
 
-# CSV & Data files
-data/*.csv
-*.xlsx
-
 # Model files
 model/*.pkl
 *.joblib
