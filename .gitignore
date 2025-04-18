@@ -1,0 +1,48 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# VSCode settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# CSV & Data files
+data/*.csv
+*.xlsx
+
+# Model files
+model/*.pkl
+*.joblib
+*.h5
+
+# Flask runtime files
+instance/
+*.db
+*.sqlite
+
+# Log files
+*.log
+
+# Graph images (generated)
+static/graphs/*.png
+
+# PDF and non-source documentation files
+*.pdf
+
+# Jupyter checkpoints (if any)
+.ipynb_checkpoints/
+
+# pyinstaller
+*.spec

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔋 EV Sales Predictor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: background 0.3s ease;
+    }
+
+    body.dark .container {
+      background: #2b2b2b;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2265d4;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    input[type="number"],
+    select,
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    select {
+      appearance: none;
+      background: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
+      background-color: #fff;
+      background-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #2155cd;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      grid-column: span 2;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1749b1;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2265d4;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+  <div class="container">
+    <h1>🔮 Predict EV Sales in India</h1>
+    <p class="subtitle">Enter vehicle and state details to estimate electric vehicle sales 🚗⚡</p>
+
+    <form method="POST">
+      <input name="Year" type="number" placeholder="📅 Year (e.g., 2024)" required>
+      <input name="Month" type="number" placeholder="🗓️ Month (1–12)" required>
+      <input name="Day" type="number" placeholder="📆 Day (1–31)" required>
+
+      <select name="State" required>
+        <option value="">🌍 Select State</option>
+        {% for state in states %}
+        <option value="{{ state }}">{{ state }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="Vehicle_Class" required>
+        <option value="">🚙 Select Vehicle Class</option>
+        {% for vc in vehicle_classes %}
+        <option value="{{ vc }}">{{ vc }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="Vehicle_Category" required>
+        <option value="">🏷️ Select Vehicle Category</option>
+        {% for cat in vehicle_categories %}
+        <option value="{{ cat }}">{{ cat }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="Vehicle_Type" required>
+        <option value="">🛵 Select Vehicle Type</option>
+        {% for vt in vehicle_types %}
+        <option value="{{ vt }}">{{ vt }}</option>
+        {% endfor %}
+      </select>
+
+      <input type="submit" value="⚡ Predict Now">
+    </form>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 <a href="https://www.linkedin.com/in/NeuralAditya" target="_blank">Aditya Arora</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>

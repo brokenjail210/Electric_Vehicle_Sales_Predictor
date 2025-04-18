@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px; /* Increased width for better graph display */
+    animation: fadeInUp 0.6s ease-out;
+    flex: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #6b7280;
+}
+
+form input,
+button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+}
+
+form input[type="submit"],
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+button:hover {
+    background-color: #1e40af;
+}
+
+.result-box {
+    background: #ecfdf5;
+    border: 2px solid #10b981;
+    padding: 1.25rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: #047857;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode */
+body.dark {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+body.dark .container {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+body.dark input,
+body.dark button {
+    background-color: #4b5563;
+    border: 1px solid #6b7280;
+    color: #f3f4f6;
+}
+
+body.dark .result-box {
+    background-color: #064e3b;
+    border-color: #10b981;
+    color: #d1fae5;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Graphs */
+.graphs {
+    margin-top: 2rem;
+}
+
+.graph {
+    margin-bottom: 2rem;
+}
+
+.graph img {
+    width: 100%;
+    max-width: 100%; /* Ensure graphs are responsive */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.graph h4 {
+    margin-bottom: 0.8rem;
+    text-align: center;
+    color: #2563eb;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 5px 20px 0;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn:hover {
+    background: #1976d2;
+  }
+  
+  .dark-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    background-color: transparent;
+  }
+  
+  footer a {
+    color: #2155cd;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  body.dark footer {
+    color: #aaa;
+  }
+  
+  body.dark footer a {
+    color: #6ca8ff;
+  }
+  .chart-image {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.graphs-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------------------------
+   Individual Graph Styling
+--------------------------------------------- */
+.graph-section {
+    margin-bottom: 2.5rem;
+}
+
+.graph-section h3 {
+    font-size: 1.4rem;
+    color: #1e3a8a;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.graph-section img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    display: block;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------
+   Footer Style
+--------------------------------------------- */
+.graphs-footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.graphs-footer a {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.graphs-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------
+   Dark Mode Support
+--------------------------------------------- */
+body.dark .graphs-container {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+body.dark .graph-section h3 {
+    color: #93c5fd;
+}
+
+body.dark .graphs-footer {
+    color: #aaa;
+}
+
+body.dark .graphs-footer a {
+    color: #60a5fa;
+}

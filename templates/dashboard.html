@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EV Sales Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+  
+  <div class="container">
+    <h1>EV Sales Dashboard</h1>
+    <p class="subtitle">Upload new data or retrain your model.</p>
+
+    <!-- Training progress bar -->
+    <div id="progress-bar-container" style="display:none; margin-bottom:1rem;">
+      <p id="progress-text">Training in progress: 0%</p>
+      <progress id="progress-bar" value="0" max="100" style="width:100%; height:1.5rem;"></progress>
+    </div>
+
+    <form id="trainForm" method="POST" enctype="multipart/form-data">
+      <label for="csv_file">Upload CSV file (optional):</label>
+      <input type="file" name="csv_file" id="csv_file" accept=".csv">
+      <!-- Hidden field to indicate train action -->
+      <input type="hidden" name="action" value="train">
+      <button type="submit" class="btn">🚀 Train Model</button>
+    </form>
+
+    <a href="{{ url_for('predict') }}" class="btn">⬅️ Back to Prediction</a>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 <a href="https://www.linkedin.com/in/NeuralAditya" target="_blank">Aditya Arora</a>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+  <script>
+    // Handle form submission and trigger background training process
+    document.getElementById('trainForm').onsubmit = function(event) {
+      event.preventDefault();  // Prevent default form submission
+
+      // Display progress bar
+      document.getElementById("progress-bar-container").style.display = "block";
+
+      // Use Fetch API to submit form asynchronously
+      var form = document.getElementById("trainForm");
+      var formData = new FormData(form);
+
+      fetch("{{ url_for('dashboard') }}", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(html => {
+        
+        startProgressBar();  // Start the progress bar updates after training starts
+      })
+      .catch(error => console.error("Error during form submission:", error));
+    };
+
+    // Function to start the progress bar using SSE (Server-Sent Events)
+    function startProgressBar() {
+      var source = new EventSource("{{ url_for('train_progress') }}");
+      source.onmessage = function(event) {
+          var progress = event.data;
+          document.getElementById('progress-bar').value = progress;
+          document.getElementById('progress-text').textContent = 'Training Progress: ' + progress + '%';
+
+          // Redirect to prediction page when training is complete
+          if (progress == 100) {
+              setTimeout(function() {
+                  window.location.href = "{{ url_for('predict') }}";  // Redirect to prediction page
+              }, 1000);
+          }
+      };
+    }
+  </script>
+
+</body>
+</html>
